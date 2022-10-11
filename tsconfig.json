@@ -1,0 +1,28 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "allowJs": true,
+    "experimentalDecorators": true,
+    "noEmit": false,
+    "module": "esnext",
+    "target": "esnext",
+    "noImplicitAny": true,
+    "moduleResolution": "Node",
+    "removeComments": true,
+    "jsx": "react",
+    "sourceMap": true,
+    "pretty": true,
+    "baseUrl": "./",
+    "skipLibCheck": true,
+    "paths": {
+      "*": ["./node_modules/@types/*", "*"]
+    },
+    "lib": ["es6", "es7", "dom"],
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "types": ["node", "jest"]
+  },
+  "include": ["./"],
+  "exclude": ["devopsScripts", "dist", "build", "node_modules", "**/*.spec.ts"]
+}
