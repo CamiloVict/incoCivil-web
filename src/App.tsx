@@ -8,6 +8,7 @@ import GlobalStyle from './GlobalStyles';
 import Layout from './Components/Layout/Layout';
 import HomePage from './Pages/Home/Home';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
+import Services from './Pages/Services';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/products' element={<h1>Products</h1>} />
-          <Route path='/services' element={<h1>Services</h1>} />
+          <Route path='/services' element={<Services />} />
         </Routes>
       </Layout>
       <Outlet />
