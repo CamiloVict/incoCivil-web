@@ -12,6 +12,7 @@ const Card = ({ header, image }: CardTypes) => {
             <CardHeader>
                 <h2>{header}</h2>
             </CardHeader>
+            <div className="card-overlay"></div>
         </CardLayout>
     )
 }

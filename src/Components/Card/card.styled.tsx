@@ -2,8 +2,9 @@ import styled from 'styled-components'
 import { sizes } from '../../../utils/screenSizes'
 
 export const CardLayout = styled.div<{image: string}>`
-    height: 300px;
-    width: 200px;
+    height: 400px;
+    max-width: 300px;
+    width: 100%;
     position: relative;
     ${
         props => `background-image: url(${props.image});`
@@ -17,13 +18,13 @@ export const CardLayout = styled.div<{image: string}>`
     transition: all ease-in-out 300ms;
     
     &:hover {
-        transform: scale(1.05);
+        transform: scale(0.95);
     }
 
-    &:after {
-        content: '';
-        width: inherit;
-        height: inherit;
+    .card-overlay {
+        height: 400px;
+        max-width: 300px;
+        width: 100%;
         position: absolute;
         top: 0%;
         z-index: 0;

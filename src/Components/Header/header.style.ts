@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styled, { AnyStyledComponent } from 'styled-components';
+import { sizes } from '../../../utils/screenSizes';
 
 export const HeaderContainer = styled.header`
   width: 100vw;
@@ -34,4 +35,9 @@ export const Menu = styled.nav`
   justify-content: space-evenly;
   align-items: center;
   width: inherit;
+
+  @media screen and (max-width: ${sizes.mobileL}){
+    display: none;
+  }
+
 `;

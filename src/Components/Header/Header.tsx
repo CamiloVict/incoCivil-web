@@ -10,15 +10,15 @@ const Header = () => {
     <HeaderContainer>
       <Menu>
         <TitleHeader>
-          <Link to={'services'}>Servicios</Link>
+          <Link to={'servicios'}>Servicios</Link>
         </TitleHeader>
 
         <TitleHeader>
-          <Link to={'importations'}>Importaciones</Link>
+          <Link to={'importaciones'}>Importaciones</Link>
         </TitleHeader>
 
         <TitleHeader>
-          <Link to={'contact'}>Contacto</Link>
+          <Link to={'contacto'}>Contacto</Link>
         </TitleHeader>
         
         <TitleHeader>
