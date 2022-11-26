@@ -19,8 +19,6 @@ body {
   box-sizing: border-box;
   margin: 0 !important;
   padding: 0;
-  min-width: 100vw;
-  min-height: 100vh;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
 }
 

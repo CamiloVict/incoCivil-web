@@ -1,4 +1,5 @@
 export type CardTypes = {
     header: string;
-    image: string
+    image: string;
+    redirectLink?: string;
 }

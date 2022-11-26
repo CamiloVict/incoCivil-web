@@ -3,7 +3,7 @@ import styled, { AnyStyledComponent } from 'styled-components';
 import { sizes } from '../../../utils/screenSizes';
 
 export const HeaderContainer = styled.header`
-  width: 100vw;
+  width: 100%;
   height: 50px;
   background-color: #fff;
   display: flex;

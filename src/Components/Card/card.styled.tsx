@@ -32,6 +32,13 @@ export const CardLayout = styled.div<{image: string}>`
         background: linear-gradient(to bottom, transparent 0%, black 100%)
     }
 
+    a {
+        color: white;
+        :visited {
+            color: white;
+        }
+    }
+
     @media screen and (max-width: ${sizes.mobileL}) {
         transform: none !important;
     }
