@@ -34,7 +34,7 @@ export const CardLayout = styled.div<{image: string}>`
 
     a {
         color: white;
-        :visited {
+        :visited, :hover {
             color: white;
         }
     }
@@ -46,13 +46,13 @@ export const CardLayout = styled.div<{image: string}>`
 `
 
 export const CardHeader = styled.div`
-    h2 {
+    h3 {
         margin: 0 !important;
     }
 
-    margin: 20px;
     position: absolute;
     z-index: 1;
-    bottom: 0;
-    left: 0;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
 `

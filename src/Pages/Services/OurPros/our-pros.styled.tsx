@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { sizes } from "../../../../utils/screenSizes";
 
-export const OurProsContainer = styled.div`
+export const OurProsContainer = styled.section`
     width: 400px;
     margin: 50px auto;
     h2 {

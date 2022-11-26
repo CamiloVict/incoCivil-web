@@ -6,12 +6,12 @@ import { CardTypes } from "utils/types/Card";
 /* Styles */
 import { CardHeader, CardLayout } from "./card.styled";
 
-const Card = ({ header, image, redirectLink }: CardTypes) => {
+const Card = ({ header, image, redirectLink = '#' }: CardTypes) => {
     return (
         <CardLayout image={image}>
             <a href={window.location.href + redirectLink}>
                 <CardHeader>
-                    <h2>{header}</h2>
+                    <h3>{header}</h3>
                 </CardHeader>
                 <div className="card-overlay"></div>
             </a>

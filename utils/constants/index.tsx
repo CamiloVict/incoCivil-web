@@ -42,3 +42,51 @@ export const professionals = {
         ]
     }
 };
+
+export const services = {
+    'CARP': {
+        name: 'CARPINTERÍA EN ALUMINIO METALICA O EN MADERA',
+        image: '/images/carpinteriaEnAluminio.jpg',
+        link: '/carpinteria-en-aluminio-metalica-o-madera'
+    },
+    'MARM': {
+        name: 'MARMOL Y GRANITO',
+        image: '/images/marmol&granito.jpg',
+        link: '/carpinteria-en-aluminio-metalica-o-madera'
+    },
+    'ADEC': {
+        name: 'ADECUACIONES Y REMODELACIONES',
+        image: '/images/adecuaciones&remodelaciones.jpeg',
+        link: '/carpinteria-en-aluminio-metalica-o-madera'
+    },
+    'COCI': {
+        name: 'COCINAS',
+        image: '/images/cocinas.jpg',
+        link: '/carpinteria-en-aluminio-metalica-o-madera'
+    },
+    'CUBI': {
+        name: 'CUBIERTAS Y TERRAZAS',
+        image: '/images/cubiertas&terrezas.jpg',
+        link: '/carpinteria-en-aluminio-metalica-o-madera'
+    },
+    'MANT': {
+        name: 'MANTENIMIENTO',
+        image: '/images/mantenimiento.jpg',
+        link: '/carpinteria-en-aluminio-metalica-o-madera'
+    },
+    'HUME': {
+        name: 'HUMEDADES',
+        image: '/images/AGLOMERADO_RH_Y_GRANITO_CANELA.jpg',
+        link: '/carpinteria-en-aluminio-metalica-o-madera'
+    },
+    'IMPE': {
+        name: 'IMPERMEABILIZACIÓN',
+        image: '/images/AGLOMERADO_RH_Y_GRANITO_CANELA.jpg',
+        link: '/carpinteria-en-aluminio-metalica-o-madera'
+    },
+    'ASEO': {
+        name: 'ASEO',
+        image: '/images/AGLOMERADO_RH_Y_GRANITO_CANELA.jpg',
+        link: '/carpinteria-en-aluminio-metalica-o-madera'
+    }
+}
