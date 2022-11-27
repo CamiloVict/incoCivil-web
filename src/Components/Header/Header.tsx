@@ -1,5 +1,4 @@
 import React from 'react';
-import { brotliDecompress } from 'zlib';
 import { HeaderContainer, TitleHeader, Link, Menu } from './header.style';
 
 const Header = () => {
@@ -11,24 +10,21 @@ const Header = () => {
     <HeaderContainer>
       <Menu>
         <TitleHeader>
-          <Link to={'products'}>Productos y Servicios</Link>
+          <Link to={'servicios'}>Servicios</Link>
         </TitleHeader>
 
         <TitleHeader>
-          <Link to={'services'}>Cotizadores Virtuales</Link>
+          <Link to={'importaciones'}>Importaciones</Link>
         </TitleHeader>
 
         <TitleHeader>
-          <Link to={'importations'}>Importa con Nosotros</Link>
+          <Link to={'contacto'}>Contacto</Link>
+        </TitleHeader>
+        
+        <TitleHeader>
+          <Link to={'nosotros'}>¿Porqué IncoCivil?</Link>
         </TitleHeader>
 
-        <TitleHeader>
-          <Link to={'professional'}>Profesionales</Link>
-        </TitleHeader>
-
-        <TitleHeader>
-          <Link to={'contact'}>Contacto</Link>
-        </TitleHeader>
       </Menu>
     </HeaderContainer>
   );

@@ -1,12 +1,10 @@
 import styled from 'styled-components';
 
 export const FooterContainer = styled.footer`
-  width: 100vw;
+  width: 100%;
   height: 30vh;
-  position: absolute;
-  bottom: 0;
   background-color: #eaebed;
-  padding: 20px;
+  margin: 0 !important;
 `;
 
 export const TitleFooter = styled.h5`

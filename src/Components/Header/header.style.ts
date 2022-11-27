@@ -1,14 +1,14 @@
 import { NavLink } from 'react-router-dom';
 import styled, { AnyStyledComponent } from 'styled-components';
+import { sizes } from '../../../utils/screenSizes';
 
 export const HeaderContainer = styled.header`
-  width: 100vw;
+  width: 100%;
   height: 50px;
   background-color: #fff;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 10px;
   border-bottom: 1px solid gainsboro;
 `;
 
@@ -35,4 +35,9 @@ export const Menu = styled.nav`
   justify-content: space-evenly;
   align-items: center;
   width: inherit;
+
+  @media screen and (max-width: ${sizes.mobileL}){
+    display: none;
+  }
+
 `;
