@@ -1,4 +1,5 @@
 import React from "react";
+import Jumbotron from "../../../../src/Components/Jumbotron";
 import Card from "../../../../src/Components/Card";
 import { services } from "../../../../utils/constants";
 import { TechnicalServicesContainer, CardsContainer } from "./technical-services.styles";
@@ -6,7 +7,7 @@ import { TechnicalServicesContainer, CardsContainer } from "./technical-services
 const TechicalServicesPage = () => {
     return (
         <TechnicalServicesContainer>
-            <h2>Servicios técnicos</h2>
+            <Jumbotron title={'Servicios técnicos'} />
             <CardsContainer>
                 {
                     Object.values(services).map(service =>

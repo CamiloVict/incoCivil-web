@@ -24,7 +24,21 @@ const ServiceForm = ({ fields }: ServiceFormTypes) => {
                 {fields.map((field, index) =>
                     <React.Fragment key={index}>
                         <label htmlFor={'input' + '-' + index}>{field.fieldName}</label>
-                        <Input name={'input' + '-' + index} type={field.fieldType} required />
+                        {
+                            field.fieldType === 'select' ?
+                                <select name="" id="">
+                                    {
+                                        field.options.map(option =>
+                                            <option value={option}>{option}</option>
+                                        )
+                                    }
+                                </select>
+                                :
+                                <>
+                                    <Input name={'input' + '-' + index} type={field.fieldType} required />
+                                </>
+
+                        }
                     </React.Fragment>
                 )}
 
