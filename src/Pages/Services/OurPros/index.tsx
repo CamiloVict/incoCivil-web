@@ -1,32 +1,63 @@
 import React, { useEffect, useState } from "react";
-import { AccordionContainer, OurProsContainer } from "./our-pros.styled";
-import { professionals } from "../../../../utils/constants";
-import Accordion from "../../../../src/Components/Accordion";
+import { AccordionContainer, InfoContainer, OurProsContainer, ProfessionalsContainer, LogoContainer } from "./our-pros.styled";
+import { professions } from "../../../../utils/constants";
+import { useParams } from "react-router-dom";
+import ProfessionalsCard from "../../../../src/Components/Professionals";
+import Jumbotron from "../../../../src/Components/Jumbotron";
 
 const OurPros = () => {
-    const [accordionElements, setAccordionElements ] = useState([])
-    useEffect(() => {
-        const elements = Object.values(professionals).map((element, index) => {
-            const { name, professional } = element;
+    const params = useParams();
+    const { pro } = params;
+    const [isOpen, setIsOpen] = useState(!pro);
 
-            const elements = {
-                header: name,
-                body: <ul> {professional.map((pro, proIndex) => <li key={proIndex + index}>{pro}</li>)}</ul>
-            }
+    const handleOpen = () => {
+        setIsOpen(!isOpen);
+    };
 
-            return elements
-        })
-        setAccordionElements(elements);
-    }, []);
-
+    const jumbotronTitle = pro ? professions[pro].name : 'Nuestros profesionales'
 
     return (
-        <OurProsContainer>
-            <h2>Nuestros profesionales</h2>
-            <AccordionContainer>
-                <Accordion elements={accordionElements}></Accordion>
-            </AccordionContainer>
-        </OurProsContainer>
+        <>
+            <Jumbotron title={jumbotronTitle} />
+            <OurProsContainer isOpen={isOpen}>
+                {pro ?
+                    <div className="trigger" onClick={handleOpen}>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div> : null
+                }
+                <ProfessionalsContainer isOpen={isOpen}>
+                    <AccordionContainer isOpen={isOpen}>
+                        <section>
+                            {Object.keys(professions).map(element => {
+                                return (
+                                    <a key={element} href={`/servicios/nuestros-profesionales/${element}`}>
+                                        <h3>{professions[element].name}</h3>
+                                    </a>
+                                )
+                            })}
+                        </section>
+                    </AccordionContainer>
+                    <InfoContainer isOpen={isOpen}>
+                        {pro ?
+                            <div className="professionals--info" >
+                                {professions[pro].professionals.map(prof =>
+                                    <React.Fragment key={prof.name}>
+                                        <ProfessionalsCard {...prof} />
+                                    </React.Fragment>
+                                )}
+                            </div>
+                            :
+                            <LogoContainer>
+                                <img src='/images/logo.svg'></img>
+                            </LogoContainer>
+                        }
+
+                    </InfoContainer>
+                </ProfessionalsContainer>
+            </OurProsContainer>
+        </>
     )
 }
 

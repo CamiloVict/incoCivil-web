@@ -1,46 +1,87 @@
-import { ServicesTypes, ServiceTypes } from "utils/types/Services";
+import { ProfessionalsTypes } from "utils/types/Professional";
+import { ServicesTypes } from "utils/types/Services";
 
-export const professionals = {
-    'ING': {
-        name: 'INGENIEROS',
-        professional: [
-            'Santiago Montoya',
-            'Freddy Chatez'
+// El profesional Nestor Fabian Macuace tiene informacion pero no se sabe de que profesion es
+// El profesional Cesar Valencia no tiene informacion y no se sabe de que profesion es
+// El profesional Juan D Torres no tiene informacion y no se sabe de que profesion es
+// El profesional Lozano no tiene informacion
+// El profesional Luis Salazar no tiene informacion
+
+export const professions: ProfessionalsTypes = {
+    'ingenieros': {
+        name: 'Ingenieros',
+        professionals: [
+            {
+                name: 'Santiago Montoya',
+                profile: 'Ingeniero comercial, especialista en superficies compactas.',
+                experience: '7 Años.',
+                regions: 'Valle del Cauca y Medellín.',
+                work: [
+                    'SantiagoMontoya1.png',
+                    'SantiagoMontoya2.png',
+                    'SantiagoMontoya3.jpg',
+                    'SantiagoMontoya4.png',
+                ]
+            },
         ]
     },
-    'ARQ': {
-        name: 'ARQUITECTOS',
-        professional: [
-            'Cesar Valencia',
-            'Juan David Torres'
+    'marmoleros': {
+        name: 'Marmoleros',
+        professionals: [
+            {
+                name: 'Lozano',
+                profile: '',
+                experience: '',
+                regions: '',
+                work: []
+            }
         ]
     },
-    'MAR': {
-        name: 'MARMOLEROS',
-        professional: [
-            'Lozano',
-            'Manuel'
+    'obra-blanca': {
+        name: 'Obra blanca',
+        professionals: [
+            {
+                name: 'John Edward Arteaga',
+                profile: 'Especialista en instalación de panel yeso, super board y PVCielo. Aplicación de enchapes y pinturas.',
+                experience: '22 Años.',
+                regions: 'Todo el país.',
+                work: [
+                    'JohnEdwardArteaga1.jpeg',
+                    'JohnEdwardArteaga2.jpeg',
+                    'JohnEdwardArteaga3.jpeg',
+                    'JohnEdwardArteaga4.jpeg',
+                ]
+            }
+            
         ]
     },
-    'OBRAB': {
-        name: 'OBRA BLANCA',
-        professional: [
-            'Cesar Ordoñez',
-            'Eduar Arteaga'
+    'soldadores': {
+        name: 'Soldadores',
+        professionals: [
+            {
+                name: 'Alex Guerrero',
+                profile: 'Soldador laminas metálicas según técnica de arco manual electrodo revestido y normativa',
+                experience: '12 Años.',
+                regions: 'Valle del Cauca',
+                work: [
+                    'AlexGuerrero1.jpeg',
+                    'AlexGuerrero2.jpeg',
+                    'AlexGuerrero3.jpeg',
+                    'AlexGuerrero4.jpeg',
+                ]
+            }
         ]
     },
-    'SOLD': {
-        name: 'SOLDADOR',
-        professional: [
-            'Samuel Quintero',
-            'Alex Guerrero'
-        ]
-    },
-    'ELEC&GAS': {
-        name: 'ELECTRODOMESTICOS Y GASODOMESTICOS',
-        professional: [
-            'Luis Salazar',
-            'Humberto'
+    'electrodomesticos-y-gasodomesticos': {
+        name: 'Electrodomésticos y gasodomésticos',
+        professionals: [
+            {
+                name: 'Luis Salazar',
+                profile: '',
+                experience: '',
+                regions: '',
+                work: []
+            }
         ]
     }
 };
@@ -52,8 +93,9 @@ export const services: ServicesTypes = {
         link: 'carpinteria-en-aluminio-metalica-o-madera',
         extraFields: [
             {
-                fieldName: 'Especifícanos el material (ALUMINIO, MADERA, ACERO, INOXIDABLE):',
-                fieldType: 'text'
+                fieldName: 'Especifícanos el material:',
+                fieldType: 'select',
+                options: ['Aluminio', 'Madera', 'Acero', 'Inoxidable']
             },
             {
                 fieldName: 'Cantidad:',
@@ -67,12 +109,14 @@ export const services: ServicesTypes = {
         link: 'marmol-y-granito',
         extraFields: [
             {
-                fieldName: 'Especifícanos el material (mármol, granito, sinterizado, cuarzo):',
-                fieldType: 'text'
+                fieldName: 'Especifícanos el material:',
+                fieldType: 'select',
+                options: ['Mármol', 'Granito', 'Sinterizado', 'Cuarzo']
             },
             {
-                fieldName: 'Aplicación (fachada, piso, pared, exterior):',
-                fieldType: 'text'
+                fieldName: 'Aplicación:',
+                fieldType: 'select',
+                options: ['Fachada', 'Piso', 'Pared', 'Exterior']
             },
             {
                 fieldName: 'Área (m²):',
@@ -97,12 +141,14 @@ export const services: ServicesTypes = {
         link: 'cocinas',
         extraFields: [
             {
-                fieldName: 'Material del mueble (madera, aglomerado, laminado de alta presión):',
-                fieldType: 'text'
+                fieldName: 'Material del mueble:',
+                fieldType: 'select',
+                options: ['Madera', 'Aglomerado', 'Laminado de Alta Presión']
             },
             {
-                fieldName: 'Material encimera (mármol, granito, sinterizado, cuarzo):',
-                fieldType: 'text'
+                fieldName: 'Material encimera:',
+                fieldType: 'select',
+                options: ['Mármol', 'Granito', 'Sintetizado', 'Cuarzo']
             },
             {
                 fieldName: 'Metros lineales totales:',
@@ -116,8 +162,9 @@ export const services: ServicesTypes = {
         link: 'cubiertas-y-terrazas',
         extraFields: [
             {
-                fieldName: 'Especifícanos el material (ACERO, MADERA):',
-                fieldType: 'text'
+                fieldName: 'Especifícanos el material:',
+                fieldType: 'select',
+                options: ['Acero', 'Madera']
             },
             {
                 fieldName: 'Área (m²):',
@@ -131,8 +178,9 @@ export const services: ServicesTypes = {
         link: 'mantenimientos',
         extraFields: [
             {
-                fieldName: 'Equipo (electrodoméstico, gasodoméstico, mobiliario):',
-                fieldType: 'text'
+                fieldName: 'Equipo:',
+                fieldType: 'select',
+                options: ['Electrodoméstico', 'Gasodoméstico', 'Mobiliario']
             },
             {
                 fieldName: 'Cantidad:',
@@ -146,8 +194,9 @@ export const services: ServicesTypes = {
         link: 'humedades',
         extraFields: [
             {
-                fieldName: 'Aplicación (Intera, externa):',
-                fieldType: 'text'
+                fieldName: 'Aplicación:',
+                fieldType: 'select',
+                options: ['Intera', 'Externa']
             }
         ]
     },
@@ -157,8 +206,9 @@ export const services: ServicesTypes = {
         link: 'impermeabilizacion',
         extraFields: [
             {
-                fieldName: 'Aplicación (Fachada, terraza, interna, externa): ',
-                fieldType: 'text'
+                fieldName: 'Aplicación: ',
+                fieldType: 'select',
+                options: ['Fachada', 'Terraza', 'Interna', 'Externa']
             },
             {
                 fieldName: 'Área (m²):',
@@ -181,7 +231,8 @@ export const services: ServicesTypes = {
             },
             {
                 fieldName: 'Aplicación:',
-                fieldType: 'text'
+                fieldType: 'select',
+                options: ['Interna', 'Externa']
             }
         ]
     }
