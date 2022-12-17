@@ -12,6 +12,7 @@ import Services from './Pages/Services';
 import TechicalServicesPage from './Pages/Services/TechnicalServices';
 import OurPros from './Pages/Services/OurPros';
 import Service from './Pages/Services/TechnicalServices/Service';
+import Imports from './Pages/Imports';
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
           <Route path="/servicios/servicios-tecnicos/:id" element={<Service />} />
           <Route path='/servicios/nuestros-profesionales/' element={<OurPros />} />
           <Route path='/servicios/nuestros-profesionales/:pro' element={<OurPros />} />
+          <Route path='/importaciones' element={<Imports />} />
+          <Route path='/importaciones/:imp' element={<Imports />} />
         </Routes>
       </Layout>
       <Outlet />

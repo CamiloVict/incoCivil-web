@@ -52,7 +52,7 @@ export const professions: ProfessionalsTypes = {
                     'JohnEdwardArteaga4.jpeg',
                 ]
             }
-            
+
         ]
     },
     'soldadores': {
@@ -237,3 +237,38 @@ export const services: ServicesTypes = {
         ]
     }
 }
+
+type ImportsTypes = {
+    name: string,
+    url: string,
+    image: string,
+}
+
+
+export const imports: ImportsTypes[] = [
+    {
+        name: 'Mármol crema marfil',
+        url: 'marmol-crema-marfil',
+        image: 'crema-marfil.jpg',
+    },
+    {
+        name: 'Mármol marrón emperador',
+        url: 'marmol-marron-emperador',
+        image: 'marron-emperador.png',
+    },
+    {
+        name: 'Mármol rojo alicante',
+        url: 'marmol-rojo-alicante',
+        image: 'rojo-alicante.jpg',
+    },
+    {
+        name: 'Mármol negro marquina',
+        url: 'marmol-negro-marquina',
+        image: 'negro-marquina.jpg',
+    },
+    {
+        name: 'Herramientas diamantadas',
+        url: 'herramientas-diamantadas',
+        image: '',
+    },
+]
