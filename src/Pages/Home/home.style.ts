@@ -7,6 +7,5 @@ export const CarouselContainer = styled.section`
   justify-content: center;
   align-items: center;
   width: 100vw;
-  /* height: 500px; */
-  /* padding: 10px; */
+  height: 500px;
 `;

@@ -19,23 +19,23 @@ export const Footer = () => {
         </Icon>
         <SocialMediaContainer >
           <Icon href='www.instagram.com'>
-            <FaInstagramSquare size={60} color={'white'} />
+            <FaInstagramSquare size={60} color={'black'} />
           </Icon>
           <Icon href='www.instagram.com'>
-            <FaTwitterSquare size={60} color={'white'} />
+            <FaTwitterSquare size={60} color={'black'} />
           </Icon>
           <Icon href='www.instagram.com'>
-            <FaFacebookSquare size={60} color={'white'} />
+            <FaFacebookSquare size={60} color={'black'} />
           </Icon>
         </SocialMediaContainer>
         <PhoneSection>
           <Icon>
-            <BsTelephonePlusFill size={60} color={'white'} />
+            <BsTelephonePlusFill size={60} color={'black'} />
           </Icon>
-          <TitleFooter>+57 3136955846</TitleFooter>
+          <h5>+57 3136955846</h5>
         </PhoneSection>
       </FirstSection>
-      <h5 style={{color: 'white', paddingLeft: '10px', marginBottom: 0}}>
+      <h5 style={{color: 'black', paddingLeft: '10px', marginBottom: 0}}>
         <p>Copyright © 2020 IncoCivil S.A.S</p>
       </h5>
     </FooterContainer>
