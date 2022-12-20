@@ -1,11 +1,24 @@
 import styled from 'styled-components';
 
 export const ProductContainer = styled.section`
-  width: 200px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  position: relative;
+`;
+
+export const Description = styled.h2`
+  position: absolute;
+  right: 0;
+  height: 100%;
+  padding: 40px;
+  width: 40%;
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(5,1,45,1));
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 `;

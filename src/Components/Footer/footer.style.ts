@@ -3,11 +3,9 @@ import styled from 'styled-components';
 export const FooterContainer = styled.footer`
   width: 100%;
   height: 30vh;
-  background-color: #05012d;
   margin: 0;
-  position: absolute;
-  bottom: 0;
   z-index: 2;
+  border-top: 1px solid grey;
 `;
 
 export const FirstSection = styled.section`
