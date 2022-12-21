@@ -2,8 +2,6 @@ import styled from "styled-components";
 import { sizes } from "../../../../utils/screenSizes";
 
 export const TechnicalServicesContainer = styled.section`
-    margin: 50px auto;
-
     h2 {
         text-align: center;
     }

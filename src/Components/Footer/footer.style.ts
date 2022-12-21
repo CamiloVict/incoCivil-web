@@ -4,8 +4,6 @@ export const FooterContainer = styled.footer`
   width: 100%;
   height: 120px;
   margin: 0;
-  position: absolute;
-  bottom: 0;
   z-index: 2;
   margin-top: 20px;
   border-top: 1px solid grey;

@@ -1,13 +1,19 @@
 import React from 'react';
 
 // *Components
-import { ProductContainer } from './product.style';
+import { Description, ProductContainer } from './product.style';
 
-const Product = ({ item }: any) => {
+const Product = (props: any) => {
+  console.log('7 item >>> ', props);
+  const { src, description } = props
   return (
     <ProductContainer>
-      <p>{item.img}</p>
-      <p>{item.description}</p>
+      <>
+        <img src={src} />
+      </>
+      <Description>
+        {description}
+      </Description>
     </ProductContainer>
   );
 };

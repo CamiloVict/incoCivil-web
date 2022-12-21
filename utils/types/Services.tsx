@@ -12,6 +12,7 @@ export type ServiceTypes = {
 export type ExtraFields = {
     fieldName: string,
     fieldType: string,
+    options?: string[]
 }
 
 export type ServiceFormTypes = {
