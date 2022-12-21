@@ -6,7 +6,6 @@ export const FooterContainer = styled.footer`
   margin: 0;
   z-index: 2;
   margin-top: 20px;
-  border-top: 1px solid grey;
   background-color: #cccccc;
   align-items: center;
 `;
