@@ -2,10 +2,12 @@ import styled from 'styled-components';
 
 export const FooterContainer = styled.footer`
   width: 100%;
-  height: 30vh;
+  height: 120px;
   margin: 0;
   z-index: 2;
-  border-top: 1px solid grey;
+  margin-top: 20px;
+  background-color: #cccccc;
+  align-items: center;
 `;
 
 export const FirstSection = styled.section`
@@ -13,14 +15,15 @@ export const FirstSection = styled.section`
   justify-content: space-evenly;
   align-items: center;
   width: 100vw;
-  margin-right: 25px;
   padding-top: 15px;
-
+  height: 70px;
 `;
 
 export const SocialMediaContainer = styled.div`
   height: 90%;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const TitleFooter = styled.h5`
@@ -32,10 +35,15 @@ export const TitleFooter = styled.h5`
 export const Icon = styled.a`
   margin-right: 25px;
   img{
-    width: 200px;
+    width: 100px;
   }
 `;
 export const PhoneSection = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  h5{
+    margin: 0;
+  }
 `;

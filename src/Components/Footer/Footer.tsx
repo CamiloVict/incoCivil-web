@@ -1,8 +1,7 @@
 import React from 'react';
-import { LogoContainer } from '../Header/header.style';
 
 // *Icons
-import { FaInstagramSquare, FaTwitterSquare, FaFacebookSquare } from 'react-icons/fa'
+import { FaInstagramSquare, FaFacebookSquare } from 'react-icons/fa'
 import { BsTelephonePlusFill } from 'react-icons/bs'
 
 // * Components
@@ -18,24 +17,22 @@ export const Footer = () => {
           <img src='/images/LOGO-FOOTER.png' />
         </Icon>
         <SocialMediaContainer >
-          <Icon href='www.instagram.com'>
-            <FaInstagramSquare size={60} color={'black'} />
+          <Icon href='https://instagram.com/incocivilco'>
+            <FaInstagramSquare size={40} color={'black'} />
           </Icon>
-          <Icon href='www.instagram.com'>
-            <FaTwitterSquare size={60} color={'black'} />
-          </Icon>
-          <Icon href='www.instagram.com'>
-            <FaFacebookSquare size={60} color={'black'} />
+          <Icon href='https://www.facebook.com/incocivilco'>
+            <FaFacebookSquare size={40} color={'black'} />
           </Icon>
         </SocialMediaContainer>
         <PhoneSection>
           <Icon>
-            <BsTelephonePlusFill size={60} color={'black'} />
+            <BsTelephonePlusFill size={40} color={'black'} />
           </Icon>
-          <h5>+57 3136955846</h5>
-        </PhoneSection>
+          <h5>+57 3172121142</h5>
+        </PhoneSection >
       </FirstSection>
-      <h5 style={{color: 'black', paddingLeft: '10px', marginBottom: 0}}>
+
+      <h5 style={{color: 'black', paddingLeft: '10px', margin: 0}}>
         <p>Copyright © 2020 IncoCivil S.A.S</p>
       </h5>
     </FooterContainer>
