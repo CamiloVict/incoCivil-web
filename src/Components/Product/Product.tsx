@@ -4,7 +4,6 @@ import React from 'react';
 import { Description, ProductContainer } from './product.style';
 
 const Product = (props: any) => {
-  console.log('7 item >>> ', props);
   const { src, description } = props
   return (
     <ProductContainer>
