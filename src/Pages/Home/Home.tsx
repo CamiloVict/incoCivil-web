@@ -9,6 +9,7 @@ import { FaWpforms } from 'react-icons/fa';
 import { IoMdAttach } from 'react-icons/io'
 import { HiOutlineLightBulb } from 'react-icons/hi'
 import Jumbotron from '../../../src/Components/Jumbotron';
+import { Banner } from '../../../src/Components/Banner/Banner';
 
 export default function HomePage() {
 
@@ -72,6 +73,7 @@ export default function HomePage() {
       </CarouselContainer>
       <Jumbotron title={'Cotiza ya!'} />
       <CardDescription items={budgedItems} />
+      <Banner />
       <Jumbotron title={'Importa con nosotros!'} />
       <CardDescription items={importItems} />
     </>

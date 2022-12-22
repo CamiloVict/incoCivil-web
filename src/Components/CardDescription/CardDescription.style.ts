@@ -6,6 +6,7 @@ export const CardContainer = styled.section`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
 `;
 
 export const CardDescription = styled.div`
