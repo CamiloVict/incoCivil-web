@@ -25,6 +25,12 @@ const Header = () => {
   const linksContainer = () => {
     return (
       <>
+        <Link to={'/'}>
+          <TitleHeader>
+            Home
+          </TitleHeader>
+        </Link>
+
         <Link to={'servicios'}>
           <TitleHeader>
             Servicios
@@ -43,11 +49,11 @@ const Header = () => {
           </TitleHeader>
         </Link>
 
-        <Link to={'nosotros'}>
+        {/* <Link to={'nosotros'}>
           <TitleHeader>
             ¿Porqué IncoCivil?
           </TitleHeader>
-        </Link>
+        </Link> */}
       </>
     )
   }
