@@ -18,7 +18,7 @@ export const CardDescription = styled.div`
   height: 400px;
   width: 200px;
   padding: 0 20px;
-
+  transition: ease-in-out 0.2s;
   &:hover{
     transform: scale(1.05 );
   }
