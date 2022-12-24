@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
-// Import Swiper React components
+//* Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
+//* Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -32,7 +32,6 @@ export const Carousel = (props: any) => {
     navigation
     pagination
     modules={[Navigation, Pagination]}
-
     >
       {renderItem()}
     </Swiper>

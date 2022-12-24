@@ -6,7 +6,7 @@ export const Banner = () => {
   return (
     <BannerContainer>
       {/* // ! this image should be in PNG format  */}
-      <Image src="public/images/theBigBoss.jpeg" alt="The boss" />
+      <Image src="images/theBigBoss.jpeg" alt="The boss" />
       <ContainerText>
 
       <Text>En INCOCIVIL insumos para la construcción civil S.A.S sabemos que el componente mas importante
