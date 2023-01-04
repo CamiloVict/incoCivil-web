@@ -6,7 +6,7 @@ export const ContainerIcon = styled.a`
     height: 70px;
   }
   position: fixed;
-  bottom: 80px;
+  bottom: 130px;
   right: 20px;
   z-index: 3;
   cursor: pointer;

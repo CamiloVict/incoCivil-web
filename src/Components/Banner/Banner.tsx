@@ -5,8 +5,7 @@ import { BannerContainer, ContainerText, Image, Text } from './banner.style'
 export const Banner = () => {
   return (
     <BannerContainer>
-      {/* // ! this image should be in PNG format  */}
-      <Image src="images/theBigBoss.jpeg" alt="The boss" />
+      <Image src="images/boss.png" alt="The boss" />
       <ContainerText>
 
       <Text>En INCOCIVIL insumos para la construcción civil S.A.S sabemos que el componente mas importante

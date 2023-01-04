@@ -14,7 +14,7 @@ export const Footer = () => {
     <FooterContainer>
       <FirstSection >
         <Icon href='/'>
-          <img src='/images/LOGO-FOOTER.png' />
+          <img src='/images/logoAzul.png' />
         </Icon>
         <SocialMediaContainer >
           <Icon href='https://instagram.com/incocivilco'>

@@ -6,8 +6,11 @@ export const FooterContainer = styled.footer`
   margin: 0;
   z-index: 2;
   margin-top: 20px;
-  background-color: #cccccc;
+  background-color: white;
   align-items: center;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #ccc;
 `;
 
 export const FirstSection = styled.section`
@@ -34,7 +37,7 @@ export const TitleFooter = styled.h5`
 
 export const Icon = styled.a`
   margin-right: 25px;
-  img{
+  img {
     width: 100px;
   }
 `;
@@ -43,7 +46,7 @@ export const PhoneSection = styled.div`
   align-items: center;
   justify-content: center;
 
-  h5{
+  h5 {
     margin: 0;
   }
 `;

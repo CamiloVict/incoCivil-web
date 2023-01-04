@@ -65,7 +65,6 @@ export default function HomePage() {
       description: 'Y listo...Esta información es suficiente para entregarte en 24 horas tu presupuesto. De no ser así, nos pondremos en contacto contigo para aclarar dudas.'
     }
   ]
-
   return (
     <>
       <CarouselContainer>

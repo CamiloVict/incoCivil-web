@@ -9,7 +9,6 @@ export const ServicesContainer = styled.div`
     justify-content: center;
     margin: 10px auto;
     padding: 10px;
-
     @media screen and (max-width: ${sizes.mobileL}) {
         flex-direction: column;
         align-items: center;

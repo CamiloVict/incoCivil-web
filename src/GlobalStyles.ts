@@ -15,7 +15,7 @@ a:hover {
 }
 html,
 body {
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   box-sizing: border-box;
   margin: 0 !important;
