@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { sizes } from '../../../utils/screenSizes';
 
 export const ContainerIcon = styled.a`
   img {
@@ -11,7 +12,23 @@ export const ContainerIcon = styled.a`
   z-index: 3;
   cursor: pointer;
   transition: ease-out 0.2s;
-  &:hover{
+  &:hover {
     transform: scale(1.1);
   }
+
+  @media screen and (max-width: ${sizes.tablet}) {
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+
+  @media screen and (max-width: ${sizes.mobileL}) {
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
 `;

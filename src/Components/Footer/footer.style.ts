@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { sizes } from '../../../utils/screenSizes';
 
 export const FooterContainer = styled.footer`
   width: 100%;
@@ -20,6 +21,9 @@ export const FirstSection = styled.section`
   width: 100vw;
   padding-top: 15px;
   height: 70px;
+  @media screen and (max-width: ${sizes.mobileL}) {
+    transform: scale(0.83);
+  }
 `;
 
 export const SocialMediaContainer = styled.div`
@@ -27,12 +31,6 @@ export const SocialMediaContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`;
-
-export const TitleFooter = styled.h5`
-  font-size: 18px;
-  font-weight: Bold;
-  color: white;
 `;
 
 export const Icon = styled.a`
