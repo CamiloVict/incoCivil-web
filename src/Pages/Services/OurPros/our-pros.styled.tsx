@@ -2,14 +2,20 @@ import styled, { css } from "styled-components";
 import { sizes } from "../../../../utils/screenSizes";
 
 export const OurProsContainer = styled.section<{ isOpen: boolean }>`
-
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
     .trigger {
         display: none;
         height: 21px;
         width: 30px;
         cursor: pointer;
         margin-left: 10px;
-
+        position: absolute;
+        top: -10px;
+        left: 0;
+        margin-bottom: 15px;
         @media screen and (max-width: ${sizes.tablet}) {
             display: block;
         }

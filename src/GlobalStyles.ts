@@ -7,9 +7,7 @@ font-weight: 500;
 color: #3b7197;
 text-decoration: inherit;
 }
-a:hover {
-  color: #535bf2;
-}
+
 #app{
   height: 100%;
 }
@@ -47,7 +45,7 @@ button:focus-visible {
 }
 
 nav a.active{
-  color: #535bf2;
+  color: #9f1f00;
   pointer-events: none;
   cursor: default;
 }
