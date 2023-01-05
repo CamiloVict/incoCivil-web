@@ -13,7 +13,7 @@ export const WhatsappIcon = () => {
 
   return (
     <ContainerIcon href={whatsappUrl} target='_blank'>
-      <img src="images/whatsapp.png" alt="WhatsApp Icon" />
+      <img src="../images/whatsapp.png" alt="WhatsApp Icon" />
     </ContainerIcon>
   )
 }
