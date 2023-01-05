@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import { sizes } from '../../../utils/screenSizes';
 export const CardContainer = styled.section`
   height: 500px;
   width: 100vw;
@@ -7,6 +8,14 @@ export const CardContainer = styled.section`
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
+  gap: 2;
+  @media screen and (max-width: ${sizes.tablet}) {
+    height: 900px;
+  }
+
+  @media screen and (max-width: ${sizes.mobileL}) {
+    height: max-content;
+  }
 `;
 
 export const CardDescription = styled.div`
@@ -19,12 +28,30 @@ export const CardDescription = styled.div`
   width: 200px;
   padding: 0 20px;
   transition: ease-in-out 0.2s;
-  &:hover{
-    transform: scale(1.05 );
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  @media screen and (max-width: ${sizes.tablet}) {
+    transform: scale(0.9);
+  }
+
+  @media screen and (max-width: ${sizes.mobileL}) {
+    height: 300px;
+    width: 150px;
+    margin: 0;
   }
 `;
 
 export const Description = styled.p`
   text-align: center;
   font-size: 16px;
-`
+  @media screen and (max-width: ${sizes.mobileL}) {
+    width: 100%;
+    height: 152px;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+`;
