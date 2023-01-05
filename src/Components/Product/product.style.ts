@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { sizes } from '../../../utils/screenSizes';
 
 export const ProductContainer = styled.section`
   width: 100%;
@@ -21,4 +22,9 @@ export const Description = styled.h2`
   justify-content: center;
   align-items: center;
   margin: 0;
+
+  @media screen and (max-width: ${sizes.tablet}) {
+    font-size: 18px;
+    line-height: 1.9em;
+  }
 `;

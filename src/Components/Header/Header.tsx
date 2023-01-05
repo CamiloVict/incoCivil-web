@@ -14,7 +14,7 @@ const Header = () => {
   }
 
   useEffect(() => {
-    if(isMobileNavActive) {
+    if (isMobileNavActive) {
       document.body.style.overflow = 'hidden';
     }
     else {
@@ -32,7 +32,7 @@ const Header = () => {
         </Link>
 
         <Link to={'importaciones'}>
-          <TitleHeader>
+          <TitleHeader >
             Importaciones
           </TitleHeader>
         </Link>
@@ -40,12 +40,6 @@ const Header = () => {
         <Link to={'contacto'}>
           <TitleHeader>
             Contacto
-          </TitleHeader>
-        </Link>
-
-        <Link to={'nosotros'}>
-          <TitleHeader>
-            ¿Porqué IncoCivil?
           </TitleHeader>
         </Link>
       </>

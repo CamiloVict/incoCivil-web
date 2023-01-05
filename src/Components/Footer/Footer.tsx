@@ -5,30 +5,35 @@ import { FaInstagramSquare, FaFacebookSquare } from 'react-icons/fa'
 import { BsTelephonePlusFill } from 'react-icons/bs'
 
 // * Components
-import { FirstSection, FooterContainer, SocialMediaContainer, TitleFooter, Icon, PhoneSection } from './footer.style';
+import { FirstSection, FooterContainer, SocialMediaContainer, Icon, PhoneSection } from './footer.style';
+// *Hook
+import { useWindowSize } from '../../../src/hooks/useWindowSize';
 
 // TODO ask client how he wanna see the footer
 
 export const Footer = () => {
+
+  const size = useWindowSize()
+
   return (
     <FooterContainer>
       <FirstSection >
         <Icon href='/'>
-          <img src='/images/LOGO-FOOTER.png' />
+          <img src='/images/logoAzul.png' />
         </Icon>
         <SocialMediaContainer >
           <Icon href='https://instagram.com/incocivilco'>
-            <FaInstagramSquare size={40} color={'black'} />
+            <FaInstagramSquare size={size >= 475 ? 40 : 30} color={'black'} />
           </Icon>
           <Icon href='https://www.facebook.com/incocivilco'>
-            <FaFacebookSquare size={40} color={'black'} />
+            <FaFacebookSquare size={size >= 475 ? 40 : 30} color={'black'} />
           </Icon>
         </SocialMediaContainer>
         <PhoneSection>
           <Icon>
-            <BsTelephonePlusFill size={40} color={'black'} />
+            <BsTelephonePlusFill size={size >= 475 ? 40 : 25} color={'black'} />
           </Icon>
-          <h5>+57 3172121142</h5>
+          <h5 style={{width: 'max-content'}}>+57 3172121142</h5>
         </PhoneSection >
       </FirstSection>
 

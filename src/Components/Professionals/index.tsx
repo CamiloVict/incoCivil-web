@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ModalElement, ProfessionalsContainer, SimpleSliderContainer, SliderElement } from "./professionals.styled";
 import { ProfessionalsInfo } from "../../../utils/types/Professional";
-import Modal from "../Modal";
 
 const ProfessionalsCard = ({ name, experience, profile, regions, work }: ProfessionalsInfo) => {
     const [isModalOpen, setIsModalOpen] = useState(false);

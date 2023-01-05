@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { sizes } from '../../../utils/screenSizes';
 
 export const FooterContainer = styled.footer`
   width: 100%;
@@ -6,8 +7,11 @@ export const FooterContainer = styled.footer`
   margin: 0;
   z-index: 2;
   margin-top: 20px;
-  background-color: #cccccc;
+  background-color: white;
   align-items: center;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #ccc;
 `;
 
 export const FirstSection = styled.section`
@@ -17,6 +21,9 @@ export const FirstSection = styled.section`
   width: 100vw;
   padding-top: 15px;
   height: 70px;
+  @media screen and (max-width: ${sizes.mobileL}) {
+    transform: scale(0.83);
+  }
 `;
 
 export const SocialMediaContainer = styled.div`
@@ -26,15 +33,9 @@ export const SocialMediaContainer = styled.div`
   align-items: center;
 `;
 
-export const TitleFooter = styled.h5`
-  font-size: 18px;
-  font-weight: Bold;
-  color: white;
-`;
-
 export const Icon = styled.a`
   margin-right: 25px;
-  img{
+  img {
     width: 100px;
   }
 `;
@@ -43,7 +44,7 @@ export const PhoneSection = styled.div`
   align-items: center;
   justify-content: center;
 
-  h5{
+  h5 {
     margin: 0;
   }
 `;

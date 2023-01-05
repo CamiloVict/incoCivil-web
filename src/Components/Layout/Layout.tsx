@@ -9,7 +9,9 @@ const Layout = ({ children }: any) => {
   return (
     <>
       <Header />
+      <div style={{paddingBottom: '140px'}}>
       {children}
+      </div>
       <WhatsappIcon />
       <Footer />
     </>

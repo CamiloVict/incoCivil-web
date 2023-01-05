@@ -1,7 +1,12 @@
 import React from 'react';
 
+import  ServiceForm  from '../../Components/ServiceForm'
+
 const Contact = () => {
-  return <div>Contact</div>;
+  return (
+
+    < ServiceForm fields={[]} />
+  )
 };
 
 export default Contact;

@@ -7,20 +7,20 @@ font-weight: 500;
 color: #3b7197;
 text-decoration: inherit;
 }
-a:hover {
-  color: #535bf2;
-}
+
 #app{
   height: 100%;
 }
 html,
 body {
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   box-sizing: border-box;
   margin: 0 !important;
   padding: 0;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 h1 {
@@ -45,7 +45,7 @@ button:focus-visible {
 }
 
 nav a.active{
-  color: #535bf2;
+  color: #9f1f00;
   pointer-events: none;
   cursor: default;
 }
