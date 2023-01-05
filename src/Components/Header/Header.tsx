@@ -14,7 +14,7 @@ const Header = () => {
   }
 
   useEffect(() => {
-    if(isMobileNavActive) {
+    if (isMobileNavActive) {
       document.body.style.overflow = 'hidden';
     }
     else {
@@ -32,7 +32,7 @@ const Header = () => {
         </Link>
 
         <Link to={'importaciones'}>
-          <TitleHeader>
+          <TitleHeader >
             Importaciones
           </TitleHeader>
         </Link>

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Icon } from 'src/Components/Footer/footer.style'
 
 import { CardContainer, CardDescription as Card, Description } from './CardDescription.style'
 

@@ -16,7 +16,6 @@ export const CardLayout = styled.div<{image: string}>`
     z-index: 1;
     cursor: pointer;
     transition: all ease-in-out 300ms;
-    
     &:hover {
         transform: scale(0.95);
     }

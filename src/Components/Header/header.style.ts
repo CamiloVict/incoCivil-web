@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
-import styled, { AnyStyledComponent, css } from 'styled-components';
+import styled, {  css } from 'styled-components';
 import { sizes } from '../../../utils/screenSizes';
+
+// * Location from react router
 
 export const HeaderContainer = styled.header`
   width: 100%;
@@ -20,14 +22,13 @@ export const Link = styled(NavLink)`
   cursor: pointer;
   transition: all ease-in-out 300ms;
   &:hover {
-    color: #3b7197;
+    color: #9F1F00;
   }
 `;
 
 export const TitleHeader = styled.li`
   font-size: 18px;
   font-weight: normal;
-  color: black;
 `;
 
 export const Menu = styled.nav`
