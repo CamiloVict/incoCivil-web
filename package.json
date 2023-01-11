@@ -11,7 +11,9 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@emailjs/browser": "3.10.0",
     "axios": "1.2.1",
+    "emailjs": "4.0.1",
     "localforage": "1.10.0",
     "match-sorter": "6.3.1",
     "prettier": "2.7.1",
