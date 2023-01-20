@@ -7,14 +7,17 @@ import emailjs from '@emailjs/browser';
 
 const ServiceForm = ({ fields }: ServiceFormTypes) => {
 
+    const page = window.location.pathname;
     const [inputState, setInputState] = useState({
         nameInput: '',
         emailInput: '',
         phoneInput: '',
-        cityInput: ''
+        cityInput: '',
+        contactDescription: '',
+        page: page
     })
 
-    const [fileState,setFileState] = useState('')
+    const [fileState, setFileState] = useState('')
 
     // !Client
     // const PUBLIC_KEY = 'n7XxvC7okH8KYzxGV'
@@ -26,7 +29,7 @@ const ServiceForm = ({ fields }: ServiceFormTypes) => {
     const TEMPLATE_ID = 'template_yopfrwl'
 
     const templateParams = {
-        ... inputState,
+        ...inputState,
         file: fileState,
     };
 
@@ -45,11 +48,11 @@ const ServiceForm = ({ fields }: ServiceFormTypes) => {
 
     const handleChange = (event: React.ChangeEvent<HTMLSelectElement>, nameField: string) => {
         const newValue: any = { ...inputState }
-        newValue[nameField] = event.target.value 
+        newValue[nameField] = event.target.value
         setInputState(newValue)
     }
     console.log('51 templateParams >>> ', templateParams);
-    
+
     return (
         <FormContainer>
             <form>
@@ -65,8 +68,18 @@ const ServiceForm = ({ fields }: ServiceFormTypes) => {
                 <label htmlFor="city-input">Ciudad: </label>
                 <Input name={'cityInput'} type={'text'} required onChange={event => handleChange(event as any, 'cityInput')} ></Input>
 
-                <label htmlFor="files-input">Añade fotos si es posible: </label>
-                <FileInput name="fileInput" type={'file'} placeholder="Ciudad" multiple onChange={event => handleFile(event)} ></FileInput>
+                {
+                    page.includes('contacto') ?
+                        <>
+                            <label htmlFor="contact-description">Descripción del servicio: </label>
+                            <textarea name="contactDescription" id="" cols={28} rows={10} onChange={event => handleChange(event as any, 'contactDescription')} ></textarea>
+                        </>
+                        :
+                        <>
+                            <label htmlFor="files-input">Añade fotos si es posible: </label>
+                            <FileInput name="fileInput" type={'file'} placeholder="Ciudad" multiple onChange={event => handleFile(event)} ></FileInput>
+                        </>
+                }
 
                 {fields.map((field, index) =>
                     <React.Fragment key={index}>
