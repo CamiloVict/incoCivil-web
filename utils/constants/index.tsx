@@ -1,11 +1,7 @@
 import { ProfessionalsTypes } from "utils/types/Professional";
 import { ServicesTypes } from "utils/types/Services";
 
-// El profesional Nestor Fabian Macuace tiene informacion pero no se sabe de que profesion es
-// El profesional Cesar Valencia no tiene informacion y no se sabe de que profesion es
-// El profesional Juan D Torres no tiene informacion y no se sabe de que profesion es
-// El profesional Lozano no tiene informacion
-// El profesional Luis Salazar no tiene informacion
+export const API_KEY = 'AIzaSyAqnKFjTk7iFWyHaSLaTUMQ82VlLFlpkRA'
 
 export const professions: ProfessionalsTypes = {
     'ingenieros': {
@@ -23,18 +19,6 @@ export const professions: ProfessionalsTypes = {
                     'SantiagoMontoya4.png',
                 ]
             },
-        ]
-    },
-    'marmoleros': {
-        name: 'Marmoleros',
-        professionals: [
-            {
-                name: 'Lozano',
-                profile: '',
-                experience: '',
-                regions: '',
-                work: []
-            }
         ]
     },
     'obra-blanca': {
@@ -72,15 +56,19 @@ export const professions: ProfessionalsTypes = {
             }
         ]
     },
-    'electrodomesticos-y-gasodomesticos': {
-        name: 'Electrodomésticos y gasodomésticos',
+    'electricistas': {
+        name: 'Electricistas',
         professionals: [
             {
-                name: 'Luis Salazar',
-                profile: '',
-                experience: '',
-                regions: '',
-                work: []
+                name: 'Nestor Fabián Macuace',
+                profile: 'Técnico eléctrico',
+                experience: '15 Años.',
+                regions: 'Valle del Cauca.',
+                work: [
+                    'NestorMacuace1.jpg',
+                    'NestorMacuace2.jpg',
+                    'NestorMacuace3.jpg',
+                ]
             }
         ]
     }

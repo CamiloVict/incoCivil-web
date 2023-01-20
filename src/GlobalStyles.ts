@@ -19,8 +19,6 @@ body {
   margin: 0 !important;
   padding: 0;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  min-height: 100vh;
-  min-width: 100vw;
 }
 
 h1 {

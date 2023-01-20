@@ -18,7 +18,7 @@ export const FirstSection = styled.section`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   padding-top: 15px;
   height: 70px;
   @media screen and (max-width: ${sizes.mobileL}) {

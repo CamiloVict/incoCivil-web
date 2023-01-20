@@ -3,6 +3,7 @@ import { ServiceFormTypes } from "../../../utils/types/Services";
 import { FormContainer, Input, SubmitInput, FileInput } from "./service-form.styled";
 
 const ServiceForm = ({ fields }: ServiceFormTypes) => {
+    const page = window.location.pathname;
     return (
         <FormContainer>
             <form>
@@ -18,8 +19,20 @@ const ServiceForm = ({ fields }: ServiceFormTypes) => {
                 <label htmlFor="city-input">Ciudad: </label>
                 <Input name={'city-input'} type={'text'} required></Input>
 
-                <label htmlFor="files-input">Añade fotos si es posible: </label>
-                <FileInput name="files-input" type={'file'} placeholder="Ciudad" multiple></FileInput>
+                {
+                    page.includes('contacto') ?
+                        <>
+                            <label htmlFor="contact-description">Descripción del servicio: </label>
+                            <textarea name="contact-description" id="" cols={28} rows={10}></textarea>
+                        </>
+                        :
+                        <>
+                            <label htmlFor="files-input">Añade fotos si es posible: </label>
+                            <FileInput name="files-input" type={'file'} multiple></FileInput>
+                        </>
+                }
+
+
 
                 {fields.map((field, index) =>
                     <React.Fragment key={index}>

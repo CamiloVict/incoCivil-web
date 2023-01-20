@@ -21,7 +21,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["node", "jest"]
+    "types": ["node", "jest", "googlemaps"]
   },
   "include": ["./"],
   "exclude": ["devopsScripts", "dist", "build", "node_modules", "**/*.spec.ts"]
