@@ -25,7 +25,7 @@ export const Input = styled.input`
     }
 `;
 
-export const SubmitInput = styled.input`
+export const SubmitInput = styled.button`
     height: 50px;
     border-radius: 5px;
     border: 1px solid #0000004c;

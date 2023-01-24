@@ -1,112 +1,126 @@
-import React, { useRef, useState } from "react";
+import React, { MutableRefObject, useRef, useState } from "react";
 import { ServiceFormTypes } from "../../../utils/types/Services";
 import { FormContainer, Input, SubmitInput, FileInput } from "./service-form.styled";
 import emailjs from '@emailjs/browser';
 
 
-
 const ServiceForm = ({ fields }: ServiceFormTypes) => {
 
-    const page = window.location.pathname;
-    const [inputState, setInputState] = useState({
-        nameInput: '',
-        emailInput: '',
-        phoneInput: '',
-        cityInput: '',
-        contactDescription: '',
-        page: page
-    })
+	const page = window.location.pathname;
+	const [inputState, setInputState] = useState({
+		name: '',
+		email: '',
+		phone: '',
+		city: '',
+		contactDescription: '',
+		page: page
+	})
 
-    const [fileState, setFileState] = useState('')
+	const [fileState, setFileState] = useState('')
+	const form = useRef<HTMLFormElement>(null);
 
-    // !Client
-    // const PUBLIC_KEY = 'n7XxvC7okH8KYzxGV'
-    // const SERVICE_ID = 'service_c8fodj2'
-    // const TEMPLATE_ID = 'template_snwv0w3'
 
-    const PUBLIC_KEY = 'PSnBouBWeHf1hIB-C'
-    const SERVICE_ID = 'service_lbz8cjv'
-    const TEMPLATE_ID = 'template_yopfrwl'
+	// !Client
+	// const PUBLIC_KEY = 'n7XxvC7okH8KYzxGV'
+	// const SERVICE_ID = 'service_c8fodj2'
+	// const TEMPLATE_ID = 'template_snwv0w3'
 
-    const templateParams = {
-        ...inputState,
-        file: fileState,
-    };
+	const PUBLIC_KEY = 'PSnBouBWeHf1hIB-C'
+	const SERVICE_ID = 'service_lbz8cjv'
+	const TEMPLATE_ID = 'template_yopfrwl'
 
-    const handleClick = () => {
-        emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
-            .then((response) => {
-                console.log('SUCCESS!', response.status, response.text);
-            }, (err) => {
-                console.log('FAILED...', err);
-            });
-    }
+	const templateParams = {
+		...inputState,
+		file: fileState,
+	};
 
-    const handleFile = (e: any) => {
-        setFileState(e.target.files)
-    }
+	console.log('43 index.tsx templateParams  >>> ', templateParams);
+	
+	const handleSubmit = (e: any) => {
+		e.preventDefault()
+		const formData = new FormData(form.current)
 
-    const handleChange = (event: React.ChangeEvent<HTMLSelectElement>, nameField: string) => {
-        const newValue: any = { ...inputState }
-        newValue[nameField] = event.target.value
-        setInputState(newValue)
-    }
-    console.log('51 templateParams >>> ', templateParams);
+		console.log('34 index.tsx form  >>> ', form.current);
+		console.log('36 index.tsx formData  >>> ', formData);
 
-    return (
-        <FormContainer>
-            <form>
-                <label htmlFor="name-input" >Nombre: </label>
-                <Input name={'nameInput'} type={'text'} required onChange={event => handleChange(event as any, 'nameInput')} ></Input>
+		emailjs.send(SERVICE_ID, TEMPLATE_ID, JSON.parse(JSON.stringify(templateParams)), PUBLIC_KEY)
+			.then(function () {
+				console.log("Email successfully sent!");
+			}, function (err) {
+				console.log("Error sending email: ", err);
+			});
 
-                <label htmlFor="email-input">Correo: </label>
-                <Input name={'emailInput'} type={'text'} required onChange={event => handleChange(event as any, 'emailInput')} ></Input>
+	}
 
-                <label htmlFor="phone-input">Teléfono: </label>
-                <Input name={'phoneInput'} type={'text'} required onChange={event => handleChange(event as any, 'phoneInput')} ></Input>
+	const handleFile = (e: any) => {
+		setFileState(e.target.files)
+	}
 
-                <label htmlFor="city-input">Ciudad: </label>
-                <Input name={'cityInput'} type={'text'} required onChange={event => handleChange(event as any, 'cityInput')} ></Input>
+	const handleChange = (event: React.ChangeEvent<HTMLSelectElement>, nameField: string) => {
+		const newValue: any = { ...inputState }
+		newValue[nameField] = event.target.value
+		setInputState(newValue)
+	}
 
-                {
-                    page.includes('contacto') ?
-                        <>
-                            <label htmlFor="contact-description">Descripción del servicio: </label>
-                            <textarea name="contactDescription" id="" cols={28} rows={10} onChange={event => handleChange(event as any, 'contactDescription')} ></textarea>
-                        </>
-                        :
-                        <>
-                            <label htmlFor="files-input">Añade fotos si es posible: </label>
-                            <FileInput name="fileInput" type={'file'} placeholder="Ciudad" multiple onChange={event => handleFile(event)} ></FileInput>
-                        </>
-                }
+	return (
+		<FormContainer>
+			<form ref={form}>
+				<label htmlFor="name-input" >Nombre: </label>
+				<Input name={'name'} type={'text'} onChange={event => handleChange(event as any, 'name')} ></Input>
 
-                {fields.map((field, index) =>
-                    <React.Fragment key={index}>
-                        <label htmlFor={'input' + '-' + index}>{field.fieldName}</label>
-                        {
-                            field.fieldType === 'select' ?
-                                <select name={field.fieldName} id="" onChange={(event) => handleChange(event, field.fieldName)} >
-                                    {
-                                        field.options.map(option => (
-                                            <option value={option}>{option}</option>
-                                        )
-                                        )
-                                    }
-                                </select>
-                                :
-                                <>
-                                    <Input name={field.fieldType} type={field.fieldType} required onChange={(event) => handleChange(event as any, field.fieldName)} />
-                                </>
+				<label htmlFor="email-input">Correo: </label>
+				<Input name={'email'} type={'text'} required onChange={event => handleChange(event as any, 'email')} ></Input>
 
-                        }
-                    </React.Fragment>
-                )}
+				<label htmlFor="phone-input">Teléfono: </label>
+				<Input name={'phone'} type={'text'} required onChange={event => handleChange(event as any, 'phone')} ></Input>
 
-                <SubmitInput type={'submit'} value={'¡Solicita tu servicio!'} onClick={handleClick} ></SubmitInput>
-            </form>
-        </FormContainer>
-    )
+				<label htmlFor="city-input">Ciudad: </label>
+				<Input name={'city'} type={'text'} required onChange={event => handleChange(event as any, 'city')} ></Input>
+
+				{
+					page.includes('contacto') ?
+						<>
+							<label htmlFor="contact-description">Descripción del servicio: </label>
+							<textarea name="contactDescription" id="" cols={28} rows={10} onChange={event => handleChange(event as any, 'contactDescription')} ></textarea>
+						</>
+						:
+						<>
+							<label htmlFor="files-input">Añade fotos si es posible: </label>
+							<FileInput name="file" type={'file'} multiple onChange={event => handleFile(event)} ></FileInput>
+						</>
+				}
+
+				{fields.map((field, index) => {
+					const inputName = field.fieldName.replace(/[^a-zA-Z0-9\s]/g, "").toLocaleLowerCase();
+					return (<React.Fragment key={index}>
+						<label htmlFor={inputName}>{field.fieldName}</label>
+						{
+							field.fieldType === 'select' ?
+								<select name={field.fieldName} id="" onChange={(event) => handleChange(event, inputName)}>
+									{
+										field.options.map(option => (
+											<option value={option}>{option}</option>
+										)
+										)
+									}
+								</select>
+								:
+								<>
+									<Input name={inputName} type={field.fieldType} onChange={(event) => handleChange(event as any, inputName)} />
+								</>
+
+						}
+					</React.Fragment>
+					)
+				}
+				)}
+
+				<SubmitInput type={'submit'} onClick={handleSubmit} >
+					¡Solicita tu servicio!
+				</SubmitInput>
+			</form>
+		</FormContainer>
+	)
 }
 
 export default ServiceForm;
