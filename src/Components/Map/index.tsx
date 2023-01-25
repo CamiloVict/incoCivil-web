@@ -15,11 +15,11 @@
  */
 
 // [START maps_react_map]
-import * as React from "react";
-import { Wrapper, Status } from "@googlemaps/react-wrapper";
-import { createCustomEqual } from "fast-equals";
-import { isLatLngLiteral } from "@googlemaps/typescript-guards";
-import { API_KEY } from "../../../utils/constants";
+import * as React from 'react';
+import { Wrapper, Status } from '@googlemaps/react-wrapper';
+import { createCustomEqual } from 'fast-equals';
+import { isLatLngLiteral } from '@googlemaps/typescript-guards';
+import { API_KEY } from '../../../utils/constants';
 
 const render = (status: Status) => {
   return <h1>{status}</h1>;
@@ -30,7 +30,7 @@ const MapComponent: React.VFC = () => {
   const [zoom, setZoom] = React.useState(15); // initial zoom
   const [center, setCenter] = React.useState<google.maps.LatLngLiteral>({
     lat: 3.437138283018003,
-    lng: -76.52721260324387
+    lng: -76.52721260324387,
   });
 
   const onIdle = (m: google.maps.Map) => {
@@ -41,19 +41,15 @@ const MapComponent: React.VFC = () => {
 
   // [START maps_react_map_component_app_return]
   return (
-    <div style={{ display: "flex", height: "100%" }}>
+    <div style={{ display: 'flex', height: '100%' }}>
       <Wrapper apiKey={API_KEY} render={render} language={'es'}>
-        <Map
-          center={center}
-          onClick={() => { }}
-          onIdle={onIdle}
-          zoom={zoom}
-          style={{ flexGrow: "1", height: "100%" }}
-        >
-          <Marker position={{
-            lat: 3.437138283018003,
-            lng: -76.52721260324387
-          }} />
+        <Map center={center} onClick={() => {}} onIdle={onIdle} zoom={zoom} style={{ flexGrow: '1', height: '100%' }}>
+          <Marker
+            position={{
+              lat: 3.437138283018003,
+              lng: -76.52721260324387,
+            }}
+          />
         </Map>
       </Wrapper>
       {/* Basic form for controlling center and zoom of map. */}
@@ -68,13 +64,7 @@ interface MapProps extends google.maps.MapOptions {
   children?: React.ReactNode;
 }
 
-const Map: React.FC<MapProps> = ({
-  onClick,
-  onIdle,
-  children,
-  style,
-  ...options
-}) => {
+const Map: React.FC<MapProps> = ({ onClick, onIdle, children, style, ...options }) => {
   // [START maps_react_map_component_add_map_hooks]
   const ref = React.useRef<HTMLDivElement>(null);
   const [map, setMap] = React.useState<google.maps.Map>();
@@ -99,16 +89,14 @@ const Map: React.FC<MapProps> = ({
   // [START maps_react_map_component_event_hooks]
   React.useEffect(() => {
     if (map) {
-      ["click", "idle"].forEach((eventName) =>
-        google.maps.event.clearListeners(map, eventName)
-      );
+      ['click', 'idle'].forEach((eventName) => google.maps.event.clearListeners(map, eventName));
 
       if (onClick) {
-        map.addListener("click", onClick);
+        map.addListener('click', onClick);
       }
 
       if (onIdle) {
-        map.addListener("idle", () => onIdle(map));
+        map.addListener('idle', () => onIdle(map));
       }
     }
   }, [map, onClick, onIdle]);
@@ -157,23 +145,16 @@ const Marker: React.FC<google.maps.MarkerOptions> = (options) => {
 };
 // [END maps_react_map_marker_component]
 
-const deepCompareEqualsForMaps = createCustomEqual(
-  (deepEqual) => (a: any, b: any) => {
-    if (
-      isLatLngLiteral(a) ||
-      a instanceof google.maps.LatLng ||
-      isLatLngLiteral(b) ||
-      b instanceof google.maps.LatLng
-    ) {
-      return new google.maps.LatLng(a).equals(new google.maps.LatLng(b));
-    }
-
-    // TODO extend to other types
-
-    // use fast-equals for other objects
-    return deepEqual(a, b);
+const deepCompareEqualsForMaps = createCustomEqual((deepEqual) => (a: any, b: any) => {
+  if (isLatLngLiteral(a) || a instanceof google.maps.LatLng || isLatLngLiteral(b) || b instanceof google.maps.LatLng) {
+    return new google.maps.LatLng(a).equals(new google.maps.LatLng(b));
   }
-);
+
+  // TODO extend to other types
+
+  // use fast-equals for other objects
+  return deepEqual(a, b);
+});
 
 function useDeepCompareMemoize(value: any) {
   const ref = React.useRef();
@@ -185,10 +166,7 @@ function useDeepCompareMemoize(value: any) {
   return ref.current;
 }
 
-function useDeepCompareEffectForMaps(
-  callback: React.EffectCallback,
-  dependencies: any[]
-) {
+function useDeepCompareEffectForMaps(callback: React.EffectCallback, dependencies: any[]) {
   React.useEffect(callback, dependencies.map(useDeepCompareMemoize));
 }
 

@@ -25,7 +25,7 @@ function App() {
           {/* <Route path='/productos' element={<h1>Products</h1>} /> */}
           <Route path='/servicios/' element={<Services />} />
           <Route path='/servicios/servicios-tecnicos/' element={<TechicalServicesPage />} />
-          <Route path="/servicios/servicios-tecnicos/:id" element={<Service />} />
+          <Route path='/servicios/servicios-tecnicos/:id' element={<Service />} />
           <Route path='/servicios/nuestros-profesionales/' element={<OurPros />} />
           <Route path='/servicios/nuestros-profesionales/:pro' element={<OurPros />} />
           <Route path='/importaciones' element={<Imports />} />

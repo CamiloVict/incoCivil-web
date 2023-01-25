@@ -11,40 +11,33 @@ const Header = () => {
 
   const handleClick = () => {
     setIsMobileNavActive(!isMobileNavActive);
-  }
+  };
 
   useEffect(() => {
     if (isMobileNavActive) {
       document.body.style.overflow = 'hidden';
-    }
-    else {
+    } else {
       document.body.style.overflow = 'auto';
     }
-  }, [isMobileNavActive])
+  }, [isMobileNavActive]);
 
   const linksContainer = () => {
     return (
       <>
         <Link to={'servicios'}>
-          <TitleHeader>
-            Servicios
-          </TitleHeader>
+          <TitleHeader>Servicios</TitleHeader>
         </Link>
 
         <Link to={'importaciones'}>
-          <TitleHeader >
-            Importaciones
-          </TitleHeader>
+          <TitleHeader>Importaciones</TitleHeader>
         </Link>
 
         <Link to={'contacto'}>
-          <TitleHeader>
-            Contacto
-          </TitleHeader>
+          <TitleHeader>Contacto</TitleHeader>
         </Link>
       </>
-    )
-  }
+    );
+  };
 
   return (
     <HeaderContainer>
@@ -53,9 +46,7 @@ const Header = () => {
           <img src='/images/logo.svg'></img>
         </a>
       </LogoContainer>
-      <Menu>
-        {linksContainer()}
-      </Menu>
+      <Menu>{linksContainer()}</Menu>
 
       <HamburgerMenu onClick={handleClick}>
         <section>
@@ -69,9 +60,7 @@ const Header = () => {
         <div className='exit-menu--container' onClick={handleClick}>
           <div>&#x2715;</div>
         </div>
-        <section className="links--container">
-          {linksContainer()}
-        </section>
+        <section className='links--container'>{linksContainer()}</section>
       </MobileMenu>
     </HeaderContainer>
   );

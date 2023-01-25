@@ -5,7 +5,7 @@ export const BannerContainer = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(5,1,45, 0.9);
+  background-color: rgba(5, 1, 45, 0.9);
   @media screen and (max-width: ${sizes.tablet}) {
     height: 420px;
   }
