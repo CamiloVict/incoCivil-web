@@ -6,7 +6,8 @@ import emailjs from '@emailjs/browser';
 
 const ServiceForm = ({ fields }: ServiceFormTypes) => {
 
-	const page = window.location.pathname;
+	const page = window.location.pathname.split('/').reverse()
+
 	const [inputState, setInputState] = useState({
 		name: '',
 		email: '',
@@ -18,7 +19,7 @@ const ServiceForm = ({ fields }: ServiceFormTypes) => {
 		page: page
 	})
 
-	const [fileState, setFileState] = useState('')
+	const [fileState, setFileState] = useState(null)
 
 	// !Client
 	// const PUBLIC_KEY = 'n7XxvC7okH8KYzxGV'
@@ -34,20 +35,30 @@ const ServiceForm = ({ fields }: ServiceFormTypes) => {
 		file: fileState,
 	};
 
+	// ? This is the function to convert the object image to a base64 format
+	// ? the problem is, the library has restriction to send information. just 50K per variable
+	// const fileConvert = (file: any) => {
+	// 	const reader = new FileReader();
+	// 	reader.readAsDataURL(file);
+	// 	reader.onload = () => {
+	// 		setFileState(reader.result);
+	// 	}
+	// 	reader.onerror = error => console.log(error);
+	// }
+
 	const handleSubmit = (e: any) => {
 		e.preventDefault()
 		emailjs.send(SERVICE_ID, TEMPLATE_ID, JSON.parse(JSON.stringify(templateParams)), PUBLIC_KEY)
 			.then(function () {
 				console.log("Email successfully sent!");
 			}, function (err) {
-				console.log("Error sending email: ", err);
+				alert("Error sending email: ");
 			});
-
 	}
 
-	const handleFile = (e: any) => {
-		setFileState(e.target.files)
-	}
+	// const handleFile = (e: any) => {
+	// 	setFileState(fileConvert(e.target.files[0]))
+	// }
 
 	const handleChange = (event: React.ChangeEvent<HTMLSelectElement>, nameField: string) => {
 		const newValue: any = { ...inputState }
@@ -71,27 +82,32 @@ const ServiceForm = ({ fields }: ServiceFormTypes) => {
 				<Input name={'city'} type={'text'} required onChange={event => handleChange(event as any, 'city')} ></Input>
 
 				{
-					page.includes('contacto') ?
+					page.includes('contacto') &&
 						<>
 							<label htmlFor="contact-description">Descripción del servicio: </label>
 							<textarea name="contactDescription" id="" cols={28} rows={10} onChange={event => handleChange(event as any, 'contactDescription')} ></textarea>
 						</>
-						:
-						<>
-							<label htmlFor="files-input">Añade fotos si es posible: </label>
-							<FileInput name="file" type={'file'} multiple onChange={event => handleFile(event)} ></FileInput>
-						</>
+						// :
+						// <>
+						// 	<label htmlFor="files-input">Añade fotos si es posible: </label>
+						// 	<FileInput name="file" type={'file'} multiple onChange={event => handleFile(event)} ></FileInput>
+						// </>
 				}
 
 				{fields.map((field, index) => {
-
-					let inputName = field.fieldName.replace(/[^a-zA-Z0-9\s]/g, "").toLocaleLowerCase();
-					inputName = field.fieldName === 'Área (m²):' ? 'cantidad' : inputName
-					inputName = field.fieldName === 'Material del mueble:' ? 'mueble' : inputName
-					inputName = field.fieldName === 'Material encimera:' ? 'cantidadEncimera' : inputName
-					inputName = field.fieldName === 'Descripción:' ? 'contactDescription' : inputName
-					inputName = field.fieldName === 'Aplicación:' ? 'aplicacion' : inputName
-
+					const inputObject: any = {
+						'Área (m²):' : 'cantidad',
+						'Material del mueble:': 'mueble',
+						'Material encimera:': 'cantidadEncimera',
+						'Descripción:': 'contactDescription',
+						'Aplicación:': 'aplicacion',
+						'Especifícanos el material:': 'material',
+						'Cantidad:' : 'cantidad',
+						'Metros lineales totales:': 'metros lineales totales',
+						'Equipo:': 'equipo'
+					}
+					let inputName = inputObject[field.fieldName] || field.fieldName.toLowerCase()
+					
 					return (<React.Fragment key={index}>
 						<label htmlFor={inputName}>{field.fieldName}</label>
 						{
