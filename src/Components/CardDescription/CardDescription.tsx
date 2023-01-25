@@ -1,25 +1,18 @@
-import React from 'react'
+import React from 'react';
 
-import { CardContainer, CardDescription as Card, Description } from './CardDescription.style'
+import { CardContainer, CardDescription as Card, Description } from './CardDescription.style';
 
 export const CardDescription = ({ items }: any) => {
-  const renderCards = () => (
+  const renderCards = () =>
     items.map((item: any, indexItem: number): JSX.Element => {
-      const { icon, description } = item
+      const { icon, description } = item;
       return (
         <Card key={indexItem}>
           {icon}
-          <Description>
-            {description}
-          </Description>
+          <Description>{description}</Description>
         </Card>
-      )
-    })
-  )
+      );
+    });
 
-  return (
-    <CardContainer>
-      {renderCards()}
-    </CardContainer>
-  )
-}
+  return <CardContainer>{renderCards()}</CardContainer>;
+};

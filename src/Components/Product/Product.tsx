@@ -4,15 +4,13 @@ import React from 'react';
 import { Description, ProductContainer } from './product.style';
 
 const Product = (props: any) => {
-  const { src, description } = props
+  const { src, description } = props;
   return (
     <ProductContainer>
       <>
         <img src={src} />
       </>
-      <Description>
-        {description}
-      </Description>
+      <Description>{description}</Description>
     </ProductContainer>
   );
 };

@@ -23,12 +23,10 @@ export const ContainerIcon = styled.a`
     }
   }
 
-
   @media screen and (max-width: ${sizes.mobileL}) {
     img {
       width: 40px;
       height: 40px;
     }
   }
-
 `;
