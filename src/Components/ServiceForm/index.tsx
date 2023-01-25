@@ -13,12 +13,12 @@ const ServiceForm = ({ fields }: ServiceFormTypes) => {
 		phone: '',
 		city: '',
 		contactDescription: '',
+		areaCuadrada: '',
+		cantidadEncimera: '',
 		page: page
 	})
 
 	const [fileState, setFileState] = useState('')
-	const form = useRef<HTMLFormElement>(null);
-
 
 	// !Client
 	// const PUBLIC_KEY = 'n7XxvC7okH8KYzxGV'
@@ -33,16 +33,10 @@ const ServiceForm = ({ fields }: ServiceFormTypes) => {
 		...inputState,
 		file: fileState,
 	};
-
-	console.log('43 index.tsx templateParams  >>> ', templateParams);
 	
 	const handleSubmit = (e: any) => {
 		e.preventDefault()
-		const formData = new FormData(form.current)
-
-		console.log('34 index.tsx form  >>> ', form.current);
-		console.log('36 index.tsx formData  >>> ', formData);
-
+		console.log('45 index.tsx templateParams  >>> ', templateParams);
 		emailjs.send(SERVICE_ID, TEMPLATE_ID, JSON.parse(JSON.stringify(templateParams)), PUBLIC_KEY)
 			.then(function () {
 				console.log("Email successfully sent!");
@@ -64,9 +58,9 @@ const ServiceForm = ({ fields }: ServiceFormTypes) => {
 
 	return (
 		<FormContainer>
-			<form ref={form}>
+			<form>
 				<label htmlFor="name-input" >Nombre: </label>
-				<Input name={'name'} type={'text'} onChange={event => handleChange(event as any, 'name')} ></Input>
+				<Input name={'name'} type={'text'} required onChange={event => handleChange(event as any, 'name')} ></Input>
 
 				<label htmlFor="email-input">Correo: </label>
 				<Input name={'email'} type={'text'} required onChange={event => handleChange(event as any, 'email')} ></Input>
@@ -91,7 +85,12 @@ const ServiceForm = ({ fields }: ServiceFormTypes) => {
 				}
 
 				{fields.map((field, index) => {
-					const inputName = field.fieldName.replace(/[^a-zA-Z0-9\s]/g, "").toLocaleLowerCase();
+					let inputName = field.fieldName.replace(/[^a-zA-Z0-9\s]/g, "").toLocaleLowerCase();
+					inputName = field.fieldName === 'Área (m²):' ? 'cantidad' : inputName
+					inputName = field.fieldName === 'Material del mueble:' ? 'mueble' : inputName
+					inputName = field.fieldName === 'Material encimera:' ? 'cantidadEncimera' : inputName
+					inputName = field.fieldName === 'Descripción:' ? 'contactDescription' : inputName
+					inputName = field.fieldName === 'Aplicación:' ? 'aplicacion' : inputName
 					return (<React.Fragment key={index}>
 						<label htmlFor={inputName}>{field.fieldName}</label>
 						{
