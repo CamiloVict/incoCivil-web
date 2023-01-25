@@ -33,10 +33,9 @@ const ServiceForm = ({ fields }: ServiceFormTypes) => {
 		...inputState,
 		file: fileState,
 	};
-	
+
 	const handleSubmit = (e: any) => {
 		e.preventDefault()
-		console.log('45 index.tsx templateParams  >>> ', templateParams);
 		emailjs.send(SERVICE_ID, TEMPLATE_ID, JSON.parse(JSON.stringify(templateParams)), PUBLIC_KEY)
 			.then(function () {
 				console.log("Email successfully sent!");
@@ -85,12 +84,14 @@ const ServiceForm = ({ fields }: ServiceFormTypes) => {
 				}
 
 				{fields.map((field, index) => {
+
 					let inputName = field.fieldName.replace(/[^a-zA-Z0-9\s]/g, "").toLocaleLowerCase();
 					inputName = field.fieldName === 'Área (m²):' ? 'cantidad' : inputName
 					inputName = field.fieldName === 'Material del mueble:' ? 'mueble' : inputName
 					inputName = field.fieldName === 'Material encimera:' ? 'cantidadEncimera' : inputName
 					inputName = field.fieldName === 'Descripción:' ? 'contactDescription' : inputName
 					inputName = field.fieldName === 'Aplicación:' ? 'aplicacion' : inputName
+
 					return (<React.Fragment key={index}>
 						<label htmlFor={inputName}>{field.fieldName}</label>
 						{
