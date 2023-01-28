@@ -25,7 +25,7 @@ const Header = () => {
   const linksContainer = () => {
     return (
       <>
-        <Link to={'servicios'}>
+        <Link to={'/servicios'}>
           <TitleHeader>
             Servicios
           </TitleHeader>
@@ -49,9 +49,9 @@ const Header = () => {
   return (
     <HeaderContainer>
       <LogoContainer>
-        <a href='/'>
+        <Link to='/'>
           <img src='/images/logo.svg'></img>
-        </a>
+        </Link>
       </LogoContainer>
       <Menu>
         {linksContainer()}

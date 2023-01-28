@@ -37,9 +37,9 @@ export const Footer = () => {
         </PhoneSection >
       </FirstSection>
 
-      <h5 style={{color: 'black', paddingLeft: '10px', margin: 0}}>
+      <div style={{color: 'black', paddingLeft: '10px', margin: 0}}>
         <p>Copyright © 2020 IncoCivil S.A.S</p>
-      </h5>
+      </div>
     </FooterContainer>
   );
 };

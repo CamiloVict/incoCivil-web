@@ -26,7 +26,7 @@ export const Link = styled(NavLink)`
   }
 `;
 
-export const TitleHeader = styled.li`
+export const TitleHeader = styled.h1`
   font-size: 18px;
   font-weight: normal;
 `;

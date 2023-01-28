@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AccordionContainer, InfoContainer, OurProsContainer, ProfessionalsContainer, LogoContainer } from "./our-pros.styled";
 import { professions } from "../../../../utils/constants";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ProfessionalsCard from "../../../../src/Components/Professionals";
 import Jumbotron from "../../../../src/Components/Jumbotron";
 
@@ -32,9 +32,9 @@ const OurPros = () => {
                         <section>
                             {Object.keys(professions).map(element => {
                                 return (
-                                    <a key={element} href={`/servicios/nuestros-profesionales/${element}`}>
+                                    <Link key={element} to={`/servicios/nuestros-profesionales/${element}`}>
                                         <h3>{professions[element].name}</h3>
-                                    </a>
+                                    </Link>
                                 )
                             })}
                         </section>
