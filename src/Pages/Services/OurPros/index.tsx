@@ -1,20 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { AccordionContainer, InfoContainer, OurProsContainer, ProfessionalsContainer, LogoContainer } from "./our-pros.styled";
-import { professions } from "../../../../utils/constants";
-import { Link, useParams } from "react-router-dom";
-import ProfessionalsCard from "../../../../src/Components/Professionals";
-import Jumbotron from "../../../../src/Components/Jumbotron";
+import React, { useEffect, useState } from 'react';
+import {
+  AccordionContainer,
+  InfoContainer,
+  OurProsContainer,
+  ProfessionalsContainer,
+  LogoContainer,
+} from './our-pros.styled';
+import { professions } from '../../../../utils/constants';
+import { Link, useParams } from 'react-router-dom';
+import ProfessionalsCard from '../../../../src/Components/Professionals';
+import Jumbotron from '../../../../src/Components/Jumbotron';
 
 const OurPros = () => {
-    const params = useParams();
-    const { pro } = params;
-    const [isOpen, setIsOpen] = useState(!pro);
+  const params = useParams();
+  const { pro } = params;
+  const [isOpen, setIsOpen] = useState(!pro);
 
-    const handleOpen = () => {
-        setIsOpen(!isOpen);
-    };
+  const handleOpen = () => {
+    setIsOpen(!isOpen);
+  };
 
-    const jumbotronTitle = pro ? professions[pro].name : 'Nuestros profesionales'
+  const jumbotronTitle = pro ? professions[pro].name : 'Nuestros profesionales';
 
     return (
         <>

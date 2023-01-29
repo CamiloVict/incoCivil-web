@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import styled, {  css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { sizes } from '../../../utils/screenSizes';
 
 // * Location from react router
@@ -22,7 +22,7 @@ export const Link = styled(NavLink)`
   cursor: pointer;
   transition: all ease-in-out 300ms;
   &:hover {
-    color: #9F1F00;
+    color: #9f1f00;
   }
 `;
 
@@ -38,7 +38,7 @@ export const Menu = styled.nav`
   align-items: center;
   width: 70%;
 
-  @media screen and (max-width: ${sizes.tablet}){
+  @media screen and (max-width: ${sizes.tablet}) {
     display: none;
   }
 `;
@@ -50,7 +50,7 @@ export const LogoContainer = styled.div`
     width: 200px;
   }
 
-  @media screen and (max-width: ${sizes.tablet}){
+  @media screen and (max-width: ${sizes.tablet}) {
     width: 50%;
     padding: 5px;
   }
@@ -65,13 +65,15 @@ export const MobileMenu = styled.div<{ isActive: boolean }>`
   right: 0;
   background-color: white;
   transition: all ease-in-out 500ms;
-  box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.5);
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
   visibility: hidden;
 
-  ${props => props.isActive && css`
-    width: 80vw;
-    visibility: visible;
-  `}
+  ${(props) =>
+    props.isActive &&
+    css`
+      width: 80vw;
+      visibility: visible;
+    `}
 
   .exit-menu--container {
     height: 78px;
@@ -88,9 +90,11 @@ export const MobileMenu = styled.div<{ isActive: boolean }>`
       justify-content: center;
       visibility: visible;
       transition: all ease-in-out 400ms;
-      ${props => !props.isActive && css`
-        visibility: hidden;
-      `}
+      ${(props) =>
+        !props.isActive &&
+        css`
+          visibility: hidden;
+        `}
     }
   }
 
@@ -135,8 +139,7 @@ export const HamburgerMenu = styled.div`
     margin-bottom: 5px;
   }
 
-  @media screen and (min-width: 769px){
+  @media screen and (min-width: 769px) {
     display: none;
   }
-
 `;

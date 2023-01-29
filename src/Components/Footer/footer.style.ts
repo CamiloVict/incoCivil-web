@@ -12,13 +12,16 @@ export const FooterContainer = styled.footer`
   position: absolute;
   bottom: 0;
   border-top: 1px solid #ccc;
+  -webkit-box-shadow: 0px -1px 5px 1px rgba(92, 90, 92, 0.49);
+  -moz-box-shadow: 0px -1px 5px 1px rgba(92, 90, 92, 0.49);
+  box-shadow: 0px -1px 5px 1px rgba(92, 90, 92, 0.49);
 `;
 
 export const FirstSection = styled.section`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   padding-top: 15px;
   height: 70px;
   @media screen and (max-width: ${sizes.mobileL}) {

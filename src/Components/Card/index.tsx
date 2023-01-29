@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 /*Types */
-import { CardTypes } from "utils/types/Card";
+import { CardTypes } from 'utils/types/Card';
 
 /* Styles */
-import { CardHeader, CardLayout } from "./card.styled";
+import { CardHeader, CardLayout } from './card.styled';
 
 const Card = ({ header, image, redirectLink = '#' }: CardTypes) => {
     const removeTrailingSlash = (str: string) => {
