@@ -14,23 +14,23 @@ const ServiceForm = ({ fields }: ServiceFormTypes) => {
     contactDescription: '',
     areaCuadrada: '',
     cantidadEncimera: '',
-    page: page,
+    page: page[0],
   });
 
-  const [fileState, setFileState] = useState(null);
+  // const [fileState, setFileState] = useState(null);
 
   // !Client
-  // const PUBLIC_KEY = 'n7XxvC7okH8KYzxGV'
-  // const SERVICE_ID = 'service_c8fodj2'
-  // const TEMPLATE_ID = 'template_snwv0w3'
+  const PUBLIC_KEY = 'n7XxvC7okH8KYzxGV'
+  const SERVICE_ID = 'service_c8fodj2'
+  const TEMPLATE_ID = 'template_snwv0w3'
 
-  const PUBLIC_KEY = 'PSnBouBWeHf1hIB-C';
-  const SERVICE_ID = 'service_lbz8cjv';
-  const TEMPLATE_ID = 'template_yopfrwl';
+  // const PUBLIC_KEY = 'PSnBouBWeHf1hIB-C';
+  // const SERVICE_ID = 'service_lbz8cjv';
+  // const TEMPLATE_ID = 'template_yopfrwl';
 
   const templateParams = {
     ...inputState,
-    file: fileState,
+    // file: fileState,
   };
 
   // ? This is the function to convert the object image to a base64 format
