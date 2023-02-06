@@ -28,7 +28,15 @@ export const FirstSection = styled.section`
     transform: scale(0.83);
   }
 `;
-
+export const ContainerContact = styled.div`
+padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100px;
+  width: max-content;
+`
 export const SocialMediaContainer = styled.div`
   height: 90%;
   display: flex;

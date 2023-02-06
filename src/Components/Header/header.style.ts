@@ -12,6 +12,9 @@ export const HeaderContainer = styled.header`
   align-items: center;
   border-bottom: 1px solid gainsboro;
   position: relative;
+  -webkit-box-shadow: 0px -1px 5px 1px rgba(92, 90, 92, 0.49);
+  -moz-box-shadow: 0px -1px 5px 1px rgba(92, 90, 92, 0.49);
+  box-shadow: 0px -1px 5px 1px rgba(92, 90, 92, 0.49);
 `;
 
 export const Link = styled(NavLink)`
@@ -26,7 +29,7 @@ export const Link = styled(NavLink)`
   }
 `;
 
-export const TitleHeader = styled.li`
+export const TitleHeader = styled.h1`
   font-size: 18px;
   font-weight: normal;
 `;
