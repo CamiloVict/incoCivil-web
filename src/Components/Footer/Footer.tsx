@@ -10,7 +10,6 @@ import { FirstSection, FooterContainer, SocialMediaContainer, Icon, PhoneSection
 // *Hook
 import { useWindowSize } from '../../../src/hooks/useWindowSize';
 
-// TODO ask client how he wanna see the footer
 
 export const Footer = () => {
   const size = useWindowSize();

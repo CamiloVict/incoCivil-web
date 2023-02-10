@@ -32,11 +32,11 @@ export const CardDescription = styled.div`
     transform: scale(1.05);
   }
 
-  @media screen and (max-width: ${sizes.tablet}) {
+  @media screen and (max-width: ${sizes.mobileS}) {
     transform: scale(0.9);
   }
 
-  @media screen and (max-width: ${sizes.mobileL}) {
+  @media screen and (max-width: ${sizes.mobileS}) {
     height: 300px;
     width: 150px;
     margin: 0;
