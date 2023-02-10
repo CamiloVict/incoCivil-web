@@ -59,7 +59,7 @@ export const PhoneSection = styled.div`
     margin: 0;
   }
 
-  @media screen and (max-width: ${sizes.mobileS}) {
+  @media screen and (max-width: ${sizes.mobileL}) {
     transform: scale(0.83);
     display: none;
   }
