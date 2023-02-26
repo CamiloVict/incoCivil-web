@@ -53,6 +53,10 @@ export default function HomePage() {
       icon: <HiOutlineLightBulb size={size >= 475 ? 80 : 60} />,
       description:
         'Y listo...Esta información es suficiente para entregarte en 24 horas tu presupuesto. De no ser así, nos pondremos en contacto contigo para aclarar dudas.',
+      callToAction : {
+        title: 'Comenzar',
+        route: 'servicios/servicios-tecnicos/'
+      }
     },
   ];
 

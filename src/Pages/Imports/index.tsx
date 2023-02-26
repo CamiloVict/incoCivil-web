@@ -126,7 +126,7 @@ const Imports = () => {
               </div>
             ) : (
               <LogoContainer>
-                <img src='/images/logo.svg'></img>
+                <img src='/images/LOGO_INCOCIVIL.png'></img>
               </LogoContainer>
             )}
           </InfoContainer>

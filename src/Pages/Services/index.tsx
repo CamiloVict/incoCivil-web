@@ -14,7 +14,7 @@ const Services = () => {
             <Card
                 redirectLink='nuestros-profesionales'
                 image={imageLocation + 'teamwork.jpg'}
-                header='Nuestros profesionales'
+                header='Profesionales Aliados'
             />
         </ServicesContainer>
     );
