@@ -163,7 +163,7 @@ export const services: ServicesTypes = {
   },
   HUME: {
     name: 'HUMEDADES',
-    image: '/images/AGLOMERADO_RH_Y_GRANITO_CANELA.jpg',
+    image: '/images/humedades.jpeg',
     link: 'humedades',
     extraFields: [
       {
@@ -175,7 +175,7 @@ export const services: ServicesTypes = {
   },
   IMPE: {
     name: 'IMPERMEABILIZACIÓN',
-    image: '/images/AGLOMERADO_RH_Y_GRANITO_CANELA.jpg',
+    image: '/images/impermeabilizacion.jpeg',
     link: 'impermeabilizacion',
     extraFields: [
       {
@@ -191,7 +191,7 @@ export const services: ServicesTypes = {
   },
   ASEO: {
     name: 'ASEO',
-    image: '/images/AGLOMERADO_RH_Y_GRANITO_CANELA.jpg',
+    image: '/images/Aseo.jpg',
     link: 'aseo',
     extraFields: [
       {

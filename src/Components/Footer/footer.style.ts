@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { sizes } from '../../../utils/screenSizes';
 
 export const FooterContainer = styled.footer`
@@ -24,19 +24,19 @@ export const FirstSection = styled.section`
   width: 100%;
   padding-top: 15px;
   height: 70px;
-  @media screen and (max-width: ${sizes.mobileL}) {
+  @media screen and (max-width: ${sizes.mobileS}) {
     transform: scale(0.83);
   }
 `;
 export const ContainerContact = styled.div`
-padding-top: 20px;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   height: 100px;
   width: max-content;
-`
+`;
 export const SocialMediaContainer = styled.div`
   height: 90%;
   display: flex;
@@ -57,5 +57,10 @@ export const PhoneSection = styled.div`
 
   h5 {
     margin: 0;
+  }
+
+  @media screen and (max-width: ${sizes.mobileL}) {
+    transform: scale(0.83);
+    display: none;
   }
 `;

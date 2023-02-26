@@ -36,7 +36,7 @@ export const CardDescription = styled.div`
     transform: scale(0.9);
   }
 
-  @media screen and (max-width: ${sizes.mobileL}) {
+  @media screen and (max-width: ${sizes.tablet}) {
     height: 300px;
     width: 150px;
     margin: 0;

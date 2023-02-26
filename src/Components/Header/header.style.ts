@@ -32,6 +32,13 @@ export const Link = styled(NavLink)`
 export const TitleHeader = styled.h1`
   font-size: 18px;
   font-weight: normal;
+
+  @media screen and (max-width: ${sizes.tablet}) {
+    margin: 16px;
+    &:hover {
+      color: #9f1f00;
+    }
+  }
 `;
 
 export const Menu = styled.nav`

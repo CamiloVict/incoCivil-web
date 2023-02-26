@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { imports } from '../../../utils/constants';
 import Jumbotron from '../../../src/Components/Jumbotron';
 import { AccordionContainer, LogoContainer, OurProsContainer } from '../Services/OurPros/our-pros.styled';
@@ -69,9 +69,9 @@ const Imports = () => {
             <section>
               {imports.map((element) => {
                 return (
-                  <a key={element.name} href={`/importaciones/${element.url}`}>
+                  <Link key={element.name} to={`/importaciones/${element.url}`}>
                     <h3>{element.name}</h3>
-                  </a>
+                  </Link>
                 );
               })}
             </section>
