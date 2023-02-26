@@ -58,6 +58,10 @@ export const OurProsContainer = styled.section<{ isOpen: boolean }>`
 export const AccordionContainer = styled.div<{ isOpen: boolean }>`
   width: 30%;
 
+  h3{
+    color: #9F1F00;
+  }
+
   section {
     padding: 10px;
   }

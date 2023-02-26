@@ -45,6 +45,10 @@ export const InfoContainer = styled.div<{ isOpen: boolean }>`
     margin: 0;
   }
 
+  h3 {
+    color: #9F1F00;
+  }
+
   @media screen and (max-width: ${sizes.tablet}) {
     width: 100% !important;
     overflow: auto;
