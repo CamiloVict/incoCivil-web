@@ -24,17 +24,17 @@ const Header = () => {
   const linksContainer = () => {
     return (
       <>
-        <Link to={'/servicios'}>
+        <Link to={'/servicios'} onClick={() => isMobileNavActive && setIsMobileNavActive(!isMobileNavActive)}>
           <TitleHeader>
             Servicios
           </TitleHeader>
         </Link>
 
-        <Link to={'importaciones'}>
+        <Link to={'/importaciones'} onClick={() => isMobileNavActive && setIsMobileNavActive(!isMobileNavActive)}>
           <TitleHeader>Importaciones</TitleHeader>
         </Link>
 
-        <Link to={'contacto'}>
+        <Link to={'/contacto'} onClick={() => isMobileNavActive && setIsMobileNavActive(!isMobileNavActive)}>
           <TitleHeader>Contacto</TitleHeader>
         </Link>
       </>
