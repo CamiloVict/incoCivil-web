@@ -45,7 +45,7 @@ const Header = () => {
     <HeaderContainer>
       <LogoContainer>
         <Link to='/'>
-          <img src='/images/logo.svg'></img>
+          <img src='/images/logoMenu.png'></img>
         </Link>
       </LogoContainer>
       <Menu>{linksContainer()}</Menu>
