@@ -44,8 +44,7 @@ button:focus-visible {
 
 nav a.active{
   color: #9f1f00;
-  pointer-events: none;
-  cursor: default;
+  cursor: pointer;
 }
 
 @media (prefers-color-scheme: light) {
