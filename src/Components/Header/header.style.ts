@@ -11,7 +11,7 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid gainsboro;
-  position: relative;
+  /* position: relative; */
   -webkit-box-shadow: 0px -1px 5px 1px rgba(92, 90, 92, 0.49);
   -moz-box-shadow: 0px -1px 5px 1px rgba(92, 90, 92, 0.49);
   box-shadow: 0px -1px 5px 1px rgba(92, 90, 92, 0.49);
@@ -57,7 +57,9 @@ export const LogoContainer = styled.div`
   width: 30%;
   padding: 10px 20px;
   img {
+    height: 60px;
     width: 200px;
+    object-fit: cover;
   }
 
   @media screen and (max-width: ${sizes.tablet}) {

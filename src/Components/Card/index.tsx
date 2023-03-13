@@ -8,10 +8,6 @@ import { CardTypes } from 'utils/types/Card';
 import { CardHeader, CardLayout } from './card.styled';
 
 const Card = ({ header, image, redirectLink = '#' }: CardTypes) => {
-    const removeTrailingSlash = (str: string) => {
-        return str.replace(/\/+$/, '');
-    }
-    console.log('14 index.tsx redirectLink  >>> ', redirectLink);
     const redirect: string = `${redirectLink}/`
     return (
         <CardLayout image={image}>

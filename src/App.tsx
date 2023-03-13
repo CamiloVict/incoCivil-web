@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/servicios/' element={<Services />}/>
-          <Route  path='/servicios/servicios-tecnicos/' element={<TechicalServicesPage />} />
+          <Route path='/servicios/servicios-tecnicos/' element={<TechicalServicesPage />} />
           <Route path="/servicios/servicios-tecnicos/:id" element={<Service />} />
           <Route path='/servicios/nuestros-profesionales/' element={<OurPros />} />
           <Route path='/servicios/nuestros-profesionales/:pro' element={<OurPros />} />
